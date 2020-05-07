@@ -9,7 +9,11 @@
         android:id="@+id/firstFragment"
         android:name="com.example.learning.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        tools:layout="@layout/fragment_first">
+        <argument
+            android:name="title11"
+            app:argType="integer"
+            android:defaultValue="1" />
         <action
             android:id="@+id/action_firstFragment_to_secondFragment2"
             app:destination="@id/secondFragment"
@@ -21,11 +25,15 @@
         android:id="@+id/secondFragment"
         android:name="com.example.learning.SecondFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment"
             app:enterAnim="@anim/fragment_fade_enter"
-            app:exitAnim="@anim/fragment_fade_exit"/>
+            app:exitAnim="@anim/fragment_fade_exit" />
     </fragment>
+    <deepLink
+        android:id="@+id/deepLink"
+        android:autoVerify="true"
+        app:uri="https://www.xyz.com" />
 </navigation>

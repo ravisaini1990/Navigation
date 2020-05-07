@@ -26,7 +26,10 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
-            findNavController().navigate(R.id.action_firstFragment_to_secondFragment2)
+            val bundle = Bundle()
+            bundle.putString("Title", "Second Flow")
+            it.alpha = 1.0f
+            findNavController().navigate(R.id.action_firstFragment_to_secondFragment2, bundle)
         }
     }
 }
