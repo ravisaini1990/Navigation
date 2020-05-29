@@ -36,4 +36,10 @@
         android:id="@+id/deepLink"
         android:autoVerify="true"
         app:uri="https://www.xyz.com" />
+
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.example.learning.DetailsActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_details" />
 </navigation>

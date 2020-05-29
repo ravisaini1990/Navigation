@@ -1,9 +1,11 @@
 package com.example.learning
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ActivityNavigator
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,8 +33,26 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                //return true
+                return activityRedirect()
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
+    private fun activityRedirect() :Boolean {
+        val activityNavigator = ActivityNavigator( this)
+        activityNavigator.navigate(
+            activityNavigator.createDestination().setIntent(
+                Intent(
+                    this,
+                    DetailsActivity::class.java
+                )
+            ), null, null, null
+        )
+        return true;
+    }
+
 }
